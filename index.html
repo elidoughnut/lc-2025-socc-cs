@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <style>
+            body {
+                font-family: "Montserrat", sans-serif;
+                margin-left: 50px;
+                font-size: larger;
+                margin-right: 20px;
+            }
+
+            .headings {
+                font-size: 3em;
+                margin-top: 1em;
+            }
+
+            h1 {
+                text-align: center;
+                font-weight: 100;
+            }
+
+            h2 {
+                font-weight: 100;
+            }
+
+            table {
+                border-collapse: collapse;
+                margin-bottom: 1em;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            td {
+                border: 1px solid #111;
+                padding: 1.25em;
+            }
+            
+            #mid{
+                background-color: #fff36d;
+            }
+
+            #ele{
+                background-color: #addfb3;
+            }
+
+            #not {
+                border-color: #ffff;
+                color: #ffff;
+            }
+
+            #not_ {
+                border-left: #ffff;
+                border-top: #ffff;
+                border-bottom: #ffff;
+                color: #ffff;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="headings">Searching Algorithms</div>
+        <h1>Binary Search: O(log<sub>2</sub>n)</h1>
+        <ul>
+            <li>The searching algorithm used in sorting an array by repeatedly dividing the search interval
+                in half.
+            </li>
+            <li>
+                Time complexity of O(log<sub>2</sub>n).
+            </li>
+        </ul>
+        <h2>To Use The Binary Search Algorithm:</h2>
+        <ul>
+            <li>
+                The data structure must be sorted.
+            </li>
+            <li>
+                Access to any element of the data structure should take constant time.
+            </li>
+        </ul>
+        <h2>Method</h2>
+        <ol>
+            <li>
+                Divide the search space into two halves by finding the middle index.
+            </li>
+            <li>
+                Compare the middle element of the search with the key.
+            </li>
+            <li>
+                If the key is found at the middle element, the process is terminated.
+            </li>
+            <li>
+                If the key is not found at the middle element, choose which half will be used as the 
+                next search space.
+                <ul>
+                    <li>
+                        If the key is smaller than the middle element, then the left half is used
+                        for the next search space.
+                    </li>
+                    <li>
+                        If the key is larger than the middle element, then the right half is used
+                        for the next search space.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                This process is continued until the key is found or the total search space is exhausted.
+            </li>
+        </ol>
+        <h2>Time Complexity</h2>
+        <p>
+            Binary search has an average/worst case time complexity of O(log<sub>2</sub>n) as the list is repeatedly halved,
+            and a best case time complexity of O(1). O(1) complexity means that the time needed to perform the task remains
+            constant regardless of the size of the input, "n".
+        </p>
+        <h2>The Binary Search Algorithm can be implemented in one of two ways.</h2>
+        <ul>
+            <li>Iterative Binary Search Algorithm.</li>
+            <li>Recursive Binary Search Algorithm.</li>
+        </ul>
+        <p>
+            The iterative algorithm operates using loops until a certain condition is met.
+            This method is often faster and has an easier to calculate time complexity. The 
+            recursive algorithm involves a function calling itself to solve smaller instances 
+            of the same problem and must have an exit criteria while approaching that criteria. 
+            Recursion is usually slower and more complex due to the stack of functions being called 
+            or memory overhead which can cause crashes when memory runs out. However recursion 
+            allows for more readable and understandable algorithm descriptions as well as its 
+            simplicity and conciseness while breaking down problems into smaller similar problems.
+        </p>
+        <h2>Advantages of Binary Search</h2>
+        <ul>
+            <li>
+                Faster than linear search, especially for large arrays.
+            </li>
+            <li>
+                Well suited for searching large datasets.
+            </li>
+        </ul>
+        <h2>Disadvantages of Binary Search</h2>
+        <ul>
+            <li>
+                The array should be sorted.
+            </li>
+            <li>
+                The data should be able to be ordered.
+            </li>
+        </ul>
+        <h2>Binary Search Example: Where the key is 50</h2>
+        <table>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td id="mid">40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not">10</td>
+                <td id="not">20</td>
+                <td id="not">30</td>
+                <td id="not_">40</td>
+                <td>50</td>
+                <td id="mid">60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not">10</td>
+                <td id="not">20</td>
+                <td id="not">30</td>
+                <td id="not_">40</td>
+                <td id="ele">50</td>
+                <td id="not">60</td>
+                <td id="not">70</td>
+            </tr>
+        </table>
+
+        <h1>Linear Search: O(n)</h1>
+        <ul>
+            <li>
+                Linear search algorithm is also known as sequential search algorithm.
+            </li>
+            <li>
+                It works by traversing across the array comparing its target element 
+                to the current element until it's found or the end of the list is reached.
+            </li>
+        </ul>
+        <h2>Method</h2>
+        <ol>
+            <li>
+                Iterate over all elements of the array and check if the current element
+                is equal to the target element.
+            </li>
+            <li>
+                If any element is found to be equal to the target element, return the index 
+                of the current element. 
+            </li>
+            <li>
+                Otherwise, if no element is equal to the target element, return -1, 
+                as the element is not found.
+            </li>
+        </ol>
+        <h2>Time Complexity</h2>
+        <p>
+            Linear search has an average/worst case time complexity of O(n), as it
+            iterates over each element of an array with a size of "n" inputs; therefore
+            it would perform "n" operations if the target element was at the end of the 
+            array. The best case time complexity is O(1): this being if the target element 
+            was first in the array.
+        </p>
+        <h2>Advantages of Linear Search</h2>
+        <ul>
+            <li>
+                It can be used whether the list is sorted or not.
+            </li>
+            <li>
+                It can be used on an array with any kind of data.
+            </li>
+            <li>
+                It is a well suited algorithm for small datasets,
+            </li>
+            <li>
+                Does not require any additional memory
+            </li>
+        </ul>
+        <h2>Disadvantages of Linear Search</h2>
+        <ul>
+            <li>
+                It has a time complexity of O(n), which makes it
+                unsuitable for large datasets.
+            </li>
+        </ul>
+        <h2>Linear Search Example: Where the key is 50</h2>
+        <table>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="mid">10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not_">10</td>
+                <td id="mid">20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not">10</td>
+                <td id="not_">20</td>
+                <td id="mid">30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not">10</td>
+                <td id="not">20</td>
+                <td id="not_">30</td>
+                <td id="mid">40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td id="not">10</td>
+                <td id="not">20</td>
+                <td id="not">30</td>
+                <td id="not_">40</td>
+                <td id="ele">50</td>
+                <td id="not">60</td>
+                <td id="not">70</td>
+            </tr>
+        </table>
+        <div class="headings">Sorting Algorithms</div>
+        <h1>Bubble Sort: O(n<sup>2</sup>)</h1>
+        <ul>
+            <li>
+                It's the simplest sorting algorithm.
+            </li>  
+            <li>
+                Works by repeatedly swapping adjacent elements if they are in the wrong order.
+            </li>
+            <li>
+                It's not suitable for large datasets because of its high average time complexity.
+            </li>
+        </ul>
+        <h2>Method</h2>
+        <ol>
+            <li>
+                On the first pass the largest element is continuously swapped with 
+                adjacent elements until it reaches the end of the array.
+            </li>
+            <li>
+                On the second pass the second largest element moves to the second last 
+                position of the array.
+            </li>
+            <li>
+                After "n" amount of passes the largest "n" element is moved to the 
+                last "n" positions.
+            </li>
+        </ol>
+        <h2>Time Complexity</h2>
+        <p>
+            Bubble sort has an average/worst case time complexity of O(n<sup>2</sup>), 
+            as it performs "n" operations on each pass of an array of size "n" inputs.
+            The algorithm performs a total of "n" passes. The passes multiplied by the 
+            operations per pass give a time complexity of O(n<sup>2</sup>). The best case
+            time complexity is O(n). If the array were to be sorted the algorithm would
+            make "n" passes but would not perform any operations on the array.
+        </p>
+        <h2>Advantages of Bubble Sort</h2>
+        <ul>
+            <li>
+                It's very easy to understand and implement.
+            </li>
+            <li>
+                Elements with the same key value maintain their relative order.
+            </li>
+        </ul>
+        <h2>Disadvantages of Bubble Sort</h2>
+        <ul>
+            <li>
+                It has limited real world application.
+            </li>
+            <li>
+                It has a high time complexity making it unsuitable for large datasets.
+            </li>
+        </ul>
+        <h2>Bubble Sort Example</h2>
+        <table>
+            <tr>
+                <td>20</td>
+                <td>30</td>
+                <td>50</td>
+                <td>70</td>
+                <td>40</td>
+                <td>10</td>
+                <td>60</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>20</td>
+                <td>30</td>
+                <td>50</td>
+                <td>40</td>
+                <td>10</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>10</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>20</td>
+                <td>30</td>
+                <td>10</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>20</td>
+                <td>10</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td>10</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>50</td>
+                <td>60</td>
+                <td>70</td>
+            </tr>
+        </table>
+        <h2>Implementing Bubble Sort</h2>
+        <p>
+            This algorithm has a time complexity of O(7<sup>2</sup>) which is 
+            49 operations, but this algorithm can be improved. 
+        </p>
+        <ol>
+            <li>Unnecessary Compares</li>
+            <p>
+                On each pass the algorithm performs "n" operations even when the 
+                "n" largest element is in the "n" last positions. To reduce the 
+                amount of operations, the range would be reduced by 1 after each 
+                pass. This would change the time complexity to ,O(n<sup>2</sup>-n)
+                or O(7<sup>2</sup>-7) (42 operations).
+            </p>
+            <li>Duplicate Passes</li>
+            <p>
+                The algorithm continues to attempt to sort the already sorted data,
+                giving the same data on multiple passes. This can be remedied 
+                by adding a flag to indicate whether a swap was needed on a particular pass.
+                If no swap was performed the array is considered sorted and the process is 
+                terminated regardless of how many passes have occurred. In the case 
+                of the above example the process would be terminated on the 6th pass.
+            </p>
+        </ol>
+    </body>
+</html> 

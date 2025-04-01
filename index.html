@@ -121,7 +121,7 @@
             The iterative algorithm operates using loops until a certain condition is met.
             This method is often faster and has an easier to calculate time complexity. The 
             recursive algorithm involves a function calling itself to solve smaller instances 
-            of the same problem and must have an exit criteria while approaching that criteria. 
+            of the same problem, it must have an exit criteria and work to approach that criteria. 
             Recursion is usually slower and more complex due to the stack of functions being called 
             or memory overhead which can cause crashes when memory runs out. However recursion 
             allows for more readable and understandable algorithm descriptions as well as its 
@@ -469,6 +469,38 @@
                 terminated regardless of how many passes have occurred. In the case 
                 of the above example the process would be terminated on the 6th pass.
             </p>
+        </ol>
+        
+        <h1>Quick Sort: O(n log<sub>2</sub>n)</h1>
+        <ul>
+            <li>
+                Breaks down the array into small non-overlapping parts, 
+                solves and combines them. (Divide and conquer). 
+            </li>
+            <li>
+                Operates by using a <i>pivot</i> to partition the array by placing the pivot
+                in the correct place.
+            </li>
+        </ul>
+        <h2>Method</h2>
+        <ol>
+            <li>
+                Select an element from the array as the pivot. The choice of pivot can vary 
+                (e.g., first element, last element, random element, or median).
+            </li>
+            <li>
+                Rearrange the array around the pivot. After partitioning, all elements 
+                smaller than the pivot will be on its left, and all elements greater 
+                than the pivot will be on its right. The pivot is then in its correct 
+                position, and we obtain the index of the pivot.
+            </li>
+            <li>
+                Apply the same process to the two partitioned sub-arrays 
+                (left and right of the pivot). N.B.: Most commonly recursive.
+            </li>
+            <li>
+                
+            </li>
         </ol>
     </body>
 </html> 

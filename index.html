@@ -65,7 +65,7 @@
                 in half.
             </li>
             <li>
-                Time complexity of O(log<sub>2</sub>n).
+                Time complexity of O(log n).
             </li>
         </ul>
         <h2>To Use The Binary Search Algorithm:</h2>
@@ -108,9 +108,8 @@
         </ol>
         <h2>Time Complexity</h2>
         <p>
-            Binary search has an average/worst case time complexity of O(log<sub>2</sub>n) as the list is repeatedly halved,
-            and a best case time complexity of O(1). O(1) complexity means that the time needed to perform the task remains
-            constant regardless of the size of the input, "n".
+            Binary search has an average/worst case time complexity of O(log n) as the list is repeatedly halved,
+            and a best case time complexity of O(1), this being if the target element is in the middle of the array.
         </p>
         <h2>The Binary Search Algorithm can be implemented in one of two ways.</h2>
         <ul>
@@ -347,8 +346,8 @@
             as it performs "n" operations on each pass of an array of size "n" inputs.
             The algorithm performs a total of "n" passes. The passes multiplied by the 
             operations per pass give a time complexity of O(n<sup>2</sup>). The best case
-            time complexity is O(n). If the array were to be sorted the algorithm would
-            make "n" passes but would not perform any operations on the array.
+            time complexity is only O(n) if the array is sorted and there is a flag to indicate
+            when the array is sorted, terminating the process on the first pass.
         </p>
         <h2>Advantages of Bubble Sort</h2>
         <ul>
@@ -457,8 +456,8 @@
                 On each pass the algorithm performs "n" operations even when the 
                 "n" largest element is in the "n" last positions. To reduce the 
                 amount of operations, the range would be reduced by 1 after each 
-                pass. This would change the time complexity to, O(n<sup>2</sup>-n)
-                or O(7<sup>2</sup>-7) (42 operations).
+                pass. This would change the time complexity to, O(n<sup>2</sup> - n)
+                or O(7<sup>2</sup> - 7) (42 operations).
             </p>
             <li>Duplicate Passes</li>
             <p>
@@ -471,7 +470,7 @@
             </p>
         </ol>
         
-        <h1>Quick Sort: O(n log<sub>2</sub>n)</h1>
+        <h1>Quick Sort: O(n log n)</h1>
         <ul>
             <li>
                 Breaks down the array into small non-overlapping parts, 
@@ -499,8 +498,25 @@
                 (left and right of the pivot). N.B.: Most commonly recursive.
             </li>
             <li>
-                
+                The process is terminated when there is only one remaining element in a 
+                sub-array, as the element is already sorted if there is only one element 
+                in a sub-array.
             </li>
         </ol>
+        <h2>Time Complexity</h2>
+        <p>
+            Quick sort has a best/average case time complexity of O(n log n) as 
+            the array is halved on each pass; with each pass requiring a linear scan 
+            to appropriately partition the array into higher and lower values. The worst case
+            time complexity is O(n<sup>2</sup>), this occurs when the pivot is repeatedly the 
+            highest or smallest value which doesn't partition the values but instead places them all on 
+            one side.
+        </p>
+        <h2>Advantages of Quick Sort</h2>
+        <ul>
+            <li>
+                
+            </li>
+        </ul>
     </body>
 </html> 
